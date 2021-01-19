@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibraryFrameworkSample;
+using Devmedia.Estudo.LibraryFrameworkSample;
 
-namespace Framework
+
+namespace Devmedia.Estudo.FrameworkUIConsole
 {
     class Program
     {
@@ -17,6 +14,8 @@ namespace Framework
 
             //Teste publicação.
             Livros livro = new Livros();
+
+            
 
             
         }

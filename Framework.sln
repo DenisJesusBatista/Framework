@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{2CAAF6F3-8F06-4679-A566-3F2C67335040}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devmedia.Estudo.FrameworkUIConsole", "Framework\Devmedia.Estudo.FrameworkUIConsole.csproj", "{2CAAF6F3-8F06-4679-A566-3F2C67335040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFrameworkSample", "LibraryFrameworkSample\LibraryFrameworkSample.csproj", "{7BB60B57-26F5-4E89-9DFB-FCAF0609A102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devmedia.Estudo.LibraryFrameworkSample", "LibraryFrameworkSample\Devmedia.Estudo.LibraryFrameworkSample.csproj", "{7BB60B57-26F5-4E89-9DFB-FCAF0609A102}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

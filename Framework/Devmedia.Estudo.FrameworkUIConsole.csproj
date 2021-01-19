@@ -7,8 +7,8 @@
     <ProjectGuid>{2CAAF6F3-8F06-4679-A566-3F2C67335040}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Framework</RootNamespace>
-    <AssemblyName>Framework</AssemblyName>
+    <RootNamespace>Devmedia.Estudo.FrameworkUIConsole</RootNamespace>
+    <AssemblyName>FrameworkUIConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibraryFrameworkSample\LibraryFrameworkSample.csproj">
+    <ProjectReference Include="..\LibraryFrameworkSample\Devmedia.Estudo.LibraryFrameworkSample.csproj">
       <Project>{7bb60b57-26f5-4e89-9dfb-fcaf0609a102}</Project>
-      <Name>LibraryFrameworkSample</Name>
+      <Name>Devmedia.Estudo.LibraryFrameworkSample</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

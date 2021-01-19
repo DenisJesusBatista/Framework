@@ -7,8 +7,8 @@
     <ProjectGuid>{7BB60B57-26F5-4E89-9DFB-FCAF0609A102}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LibraryFrameworkSample</RootNamespace>
-    <AssemblyName>LibraryFrameworkSample</AssemblyName>
+    <RootNamespace>Devmedia.Estudo.LibraryFrameworkSample</RootNamespace>
+    <AssemblyName>Devmedia.Estudo.LibraryFrameworkSample</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
