@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Devmedia.Estudo.LibraryFrameworkSample.Library;
 
 namespace Devmedia.Estudo.LibraryFrameworkSample
 {
@@ -27,5 +27,14 @@ namespace Devmedia.Estudo.LibraryFrameworkSample
             set { anoPublicacao = value; }
         }
 
+        Biblioteca _biblioteca;
+
+        public Biblioteca _Biblioteca
+        {
+            get { return _biblioteca; }
+            set { _biblioteca = value; }
+        }
+
+        
     }
 }

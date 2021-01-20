@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7BB60B57-26F5-4E89-9DFB-FCAF0609A102}</ProjectGuid>
+    <ProjectGuid>{B4C43551-9898-4FD1-90D9-E9B6A5FEA306}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Devmedia.Estudo.LibraryFrameworkSample</RootNamespace>
-    <AssemblyName>Devmedia.Estudo.LibraryFrameworkSample</AssemblyName>
+    <RootNamespace>Devmedia.Estudo.LibraryFrameworkSample.Library</RootNamespace>
+    <AssemblyName>Devmedia.Estudo.LibraryFrameworkSample.Library</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,14 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Livros.cs" />
+    <Compile Include="Biblioteca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Devmedia.Estudo.LibraryFrameworkSample.Library\Devmedia.Estudo.LibraryFrameworkSample.Library.csproj">
-      <Project>{b4c43551-9898-4fd1-90d9-e9b6a5fea306}</Project>
-      <Name>Devmedia.Estudo.LibraryFrameworkSample.Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
