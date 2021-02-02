@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Contatos>
+  <Contato nome="Denis de Jesus" telefone="3456 2255" />
+  <Contato nome="Gislaine Graciele" telefone="9161 2255" />
+  <Contato nome="Davi de Jesus Rodrigues" telefone="7574 2255" />
+  <Contato nome="Dilcemara de Jesus Batista" telefone="9858 2255" />
+  <Contato nome="Daniel de Jesus Santana" telefone="8817 2255" />
+  <Contato nome="Isadora de Jesus Santana" telefone="9985 2255" />
+  <Contato nome="Teste Nome" telefone="Teste Tel" />
+  <Contato nome="Marinalva" telefone="999999" />
+  <Contato nome="Marinalva 2" telefone="999999" />
+</Contatos>
