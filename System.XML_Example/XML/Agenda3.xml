@@ -5,14 +5,4 @@
     <Nome>Denis</Nome>
     <Telefone>99999999</Telefone>
   </Contato>
-  <Contato>
-    <Id>2</Id>
-    <Nome>Teste</Nome>
-    <Telefone>1111</Telefone>
-  </Contato>
-  <Contato>
-    <Id>3</Id>
-    <Nome>Teste 3</Nome>
-    <Telefone>1111</Telefone>
-  </Contato>
 </Contatos>

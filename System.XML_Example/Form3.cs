@@ -17,43 +17,25 @@ namespace System.XML_Example
 {
     public partial class Form3 : Form
     {
-        private string arquivo =
-            @"C:\projeto\devmedia\.NET Framework 4.5\Fontes\NetFwk45\Framework\Framework\System.XML_Example\XML\Agenda3.xml";
+        private Contatos contatos = null;
 
-        private XmlDocument xmlDoc = new XmlDocument();
-        private XElement xDoc;
-        private Contatos contatos;
-       
         public Form3()
         {
             InitializeComponent();
 
-            if (!File.Exists(arquivo))
-            {
-                XmlNode nodeRoot = xmlDoc.CreateElement("Contatos");
-                xmlDoc.AppendChild(nodeRoot);
-                xmlDoc.Save(arquivo);
-            }
-            
         }
 
-        private void ReadAgenda()
+        private void BindListBox()
         {
-            xDoc = XElement.Load(arquivo);
-            contatos = Serializer.Deserialize<Contatos>(xDoc);
-            lblContato.Text = string.Empty;
-
-            foreach (Contato c in contatos.Contato)
-            {
-                lblContato.Text += "Nome: " + c.Nome + "\nTelefone: " + c.Telefone + "\n\n";
-
-            }
-
+            contatos = SContatos.Read();
+            listBox1.DataSource = contatos.Contato;
+            listBox1.DisplayMember = "Nome";
+            listBox1.ValueMember = "Id";
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            ReadAgenda();
+            this.BindListBox();
 
         }
 
@@ -66,16 +48,40 @@ namespace System.XML_Example
 
             contatos.Contato.Add(c);
 
-            XElement xmlReturn = Serializer.Serialize<Contatos>(contatos);
-            xmlReturn.Save(arquivo);
+            SContatos.Write(contatos);
 
-            ReadAgenda();
+            this.BindListBox();
+
         }
 
         private int NextId()
         {
             int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1;
             return 0;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex > -1)
+            {
+                Contato c = contatos.Contato.Find(p => p.Id == (int) listBox1.SelectedValue);
+                contatos.Contato.Remove(c);
+                SContatos.Write(contatos);
+
+                this.BindListBox();
+
+            }
+            else
+            {
+                MessageBox.Show("Nenhum item selecionado");
+            }
+        }
+
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Contato c = contatos.Contato.Find(p => p.Id == (int)listBox1.SelectedValue);
+            MessageBox.Show("Nome: " + c.Nome + "\n" + "Telefone: " + c.Telefone);
+
         }
     }
 }

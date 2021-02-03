@@ -33,8 +33,8 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
-            this.lblContatos = new System.Windows.Forms.Label();
-            this.lblContato = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -79,30 +79,32 @@
             this.lblTelefone.TabIndex = 9;
             this.lblTelefone.Text = "Telefone";
             // 
-            // lblContatos
+            // listBox1
             // 
-            this.lblContatos.AutoSize = true;
-            this.lblContatos.Location = new System.Drawing.Point(276, 46);
-            this.lblContatos.Name = "lblContatos";
-            this.lblContatos.Size = new System.Drawing.Size(0, 13);
-            this.lblContatos.TabIndex = 10;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(213, 30);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(417, 277);
+            this.listBox1.TabIndex = 12;
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             // 
-            // lblContato
+            // btnDelete
             // 
-            this.lblContato.AutoSize = true;
-            this.lblContato.Location = new System.Drawing.Point(240, 46);
-            this.lblContato.Name = "lblContato";
-            this.lblContato.Size = new System.Drawing.Size(10, 13);
-            this.lblContato.TabIndex = 11;
-            this.lblContato.Text = " ";
+            this.btnDelete.Location = new System.Drawing.Point(555, 325);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 440);
-            this.Controls.Add(this.lblContato);
-            this.Controls.Add(this.lblContatos);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtTelefone);
@@ -122,7 +124,7 @@
         private Windows.Forms.TextBox txtTelefone;
         private Windows.Forms.Label lblNome;
         private Windows.Forms.Label lblTelefone;
-        private Windows.Forms.Label lblContatos;
-        private Windows.Forms.Label lblContato;
+        private Windows.Forms.ListBox listBox1;
+        private Windows.Forms.Button btnDelete;
     }
 }
