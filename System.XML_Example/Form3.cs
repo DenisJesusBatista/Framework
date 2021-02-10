@@ -44,7 +44,11 @@ namespace System.XML_Example
             Contato c = new Contato();
             c.Id = this.NextId();
             c.Nome = txtNome.Text;
-            c.Telefone = txtTelefone.Text;
+            c.Telefone = new List<Telefone>();
+            c.Telefone.Add(new Telefone((int)TiposTelefone.Residencial,txtFoneResidencial.Text));
+            c.Telefone.Add(new Telefone((int)TiposTelefone.Comercial, txtFoneComercial.Text));
+            c.Telefone.Add(new Telefone((int)TiposTelefone.Celular, txtCelular.Text));
+            c.Obs = txtObs.Text;
 
             contatos.Contato.Add(c);
 
@@ -57,7 +61,7 @@ namespace System.XML_Example
         private int NextId()
         {
             int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1;
-            return 0;
+            return next;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -80,7 +84,7 @@ namespace System.XML_Example
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Contato c = contatos.Contato.Find(p => p.Id == (int)listBox1.SelectedValue);
-            MessageBox.Show("Nome: " + c.Nome + "\n" + "Telefone: " + c.Telefone);
+            MessageBox.Show("Nome: " + c.Nome + "\n" + "Telefone: " + c.Telefone + "\n" + "Obs: " + c.Obs);
 
         }
 
@@ -92,8 +96,15 @@ namespace System.XML_Example
                 pnlIncluir.Visible = false;
                 Contato c = contatos.Contato.Find(p => p.Id == (int)listBox1.SelectedValue);
                 txtNome.Text = c.Nome;
-                txtTelefone.Text = c.Telefone;
+                if (c.Telefone.Count > 0)
+                {
+                   txtFoneResidencial.Text = c.Telefone[(int)TiposTelefone.Residencial].Numero;
+                    txtFoneComercial.Text = c.Telefone[(int)TiposTelefone.Comercial].Numero;
+                    txtCelular.Text = c.Telefone[(int)TiposTelefone.Celular].Numero;
+                }
+             
                 lblId.Text = c.Id.ToString();
+                txtObs.Text = c.Obs;
 
             }
             else
@@ -106,8 +117,15 @@ namespace System.XML_Example
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(lblId.Text);
-            contatos.Contato.Find(p => p.Id == id).Nome = txtNome.Text;
-            contatos.Contato.Find(p => p.Id == id).Telefone = txtTelefone.Text;
+            Contato c = contatos.Contato.Find(p => p.Id == id);
+            
+            c.Nome = txtNome.Text;
+            //c.Telefone = new List<string>();
+            c.Telefone[(int)TiposTelefone.Residencial].Numero = txtFoneResidencial.Text;
+            c.Telefone[(int)TiposTelefone.Comercial].Numero = txtFoneComercial.Text;
+            c.Telefone[(int)TiposTelefone.Celular].Numero = txtCelular.Text;
+            c.Obs = txtObs.Text;
+
             SContatos.Write(contatos);
 
             this.BindListBox();
@@ -121,7 +139,13 @@ namespace System.XML_Example
         {
             pnlAlterar.Visible = false;
             pnlIncluir.Visible = true;
-            txtNome.Text = txtTelefone.Text = lblId.Text = string.Empty;
+            txtNome.Text = txtFoneResidencial.Text = txtFoneComercial.Text = txtCelular.Text = txtObs.Text = lblId.Text = string.Empty;
+        }
+
+        private void btnBusca_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.ShowDialog();
         }
     }
 }
