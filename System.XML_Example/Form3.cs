@@ -25,17 +25,17 @@ namespace System.XML_Example
 
         }
 
-        private void BindListBox()
+        private void BindListBox(List<Contato> lContato)
         {
-            contatos = SContatos.Read();
-            listBox1.DataSource = contatos.Contato;
+            listBox1.DataSource = lContato;
             listBox1.DisplayMember = "Nome";
             listBox1.ValueMember = "Id";
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            this.BindListBox();
+            contatos = SContatos.Read();
+            this.BindListBox(contatos.Contato);
 
         }
 
@@ -54,7 +54,7 @@ namespace System.XML_Example
 
             SContatos.Write(contatos);
 
-            this.BindListBox();
+            this.BindListBox(SContatos.Read().Contato);
 
         }
 
@@ -72,7 +72,7 @@ namespace System.XML_Example
                 contatos.Contato.Remove(c);
                 SContatos.Write(contatos);
 
-                this.BindListBox();
+                this.BindListBox(SContatos.Read().Contato);
 
             }
             else
@@ -128,7 +128,7 @@ namespace System.XML_Example
 
             SContatos.Write(contatos);
 
-            this.BindListBox();
+            this.BindListBox(SContatos.Read().Contato);
 
             this.btnCancelar_Click(null,null);
 
@@ -145,7 +145,29 @@ namespace System.XML_Example
         private void btnBusca_Click(object sender, EventArgs e)
         {
             Form4 form4 = new Form4();
+            form4.FormClosed += form4_FormClosed;       
             form4.ShowDialog();
+        }
+
+        private void form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (FiltroContatos.Filtro.Count > 0)
+            {
+                btnLimpar.Visible = true;
+                this.BindListBox(FiltroContatos.Filtro);
+
+            }
+            else
+            {
+                MessageBox.Show("Nenhum resultado encontrado.");
+            }
+            
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            btnLimpar.Visible = false;
+            this.BindListBox(SContatos.Read().Contato);
         }
     }
 }

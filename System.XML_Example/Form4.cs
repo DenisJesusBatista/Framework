@@ -23,11 +23,14 @@ namespace System.XML_Example
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             contatos = SContatos.Read();
-            if (cmbCampo.SelectedText == "Nome")
+            if (cmbCampo.Text == "Nome")
             {
                 resultado = contatos.Contato.Where(p => p.Nome.Contains(txtBusca.Text)).ToList<Contato>();
             }
-            
+
+            FiltroContatos.Filtro = resultado;
+            this.Close();
+
 
         }
     }

@@ -75,13 +75,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 194);
+            this.ClientSize = new System.Drawing.Size(530, 50);
+            this.ControlBox = false;
             this.Controls.Add(this.lblResultados);
             this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.btnBuscar);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Busca";
             this.ResumeLayout(false);
             this.PerformLayout();
 

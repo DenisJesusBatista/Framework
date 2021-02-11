@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.btnBusca = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.pnlIncluir.SuspendLayout();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
@@ -228,11 +229,23 @@
             this.btnBusca.UseVisualStyleBackColor = true;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(381, 325);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.TabIndex = 25;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Visible = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 440);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCelular);
@@ -281,5 +294,6 @@
         private Windows.Forms.Label label2;
         private Windows.Forms.TextBox txtCelular;
         private Windows.Forms.Button btnBusca;
+        private Windows.Forms.Button btnLimpar;
     }
 }

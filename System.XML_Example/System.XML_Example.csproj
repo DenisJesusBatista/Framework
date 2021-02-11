@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Contato.cs" />
     <Compile Include="Contatos.cs" />
+    <Compile Include="FiltroContatos.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
